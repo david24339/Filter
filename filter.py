@@ -1,7 +1,7 @@
 #import the graphic library
 from graphics import*
 
-#import the sys module to use the exit command
+#import the sys library to use the exit function
 import sys
 
 #Implementation of the grayscaleFilter function
@@ -22,7 +22,7 @@ def grayscaleFilter(ImageN):
             red,green,blue = img.getPixel(x,y)
             average = round((red+green+blue)/3)
 
-            #replace the pixel colors by using the previous average as rgb values
+            #replace the pixel color by using the previous average as rgb values
             img.setPixel(x,y,color_rgb(average,average,average))
     #save the image on wihich the grayscale filter has been applied
     img.save("gray.gif")
@@ -47,7 +47,7 @@ def sierraFilter(ImageN):
             sepiaG = round((0.349 * red) + (0.686 * green) + (0.168 * blue))
             sepiaB = round((0.272 * red) + (0.534 * green) + (0.131 * blue))
 
-            #replace the pixel colors using the new rgb values
+            #replace the pixel color using the new rgb values
             img.setPixel(x,y,color_rgb(sepiaR,sepiaG,sepiaB))
             
     #save the image on wihich the sierra filter has been applied
@@ -70,9 +70,9 @@ def main():
         sys.exit(0)
         
     #if the user inputted a correct name, prompt them for the filter the would like to apply(grayscale or sierra)
-    filterName = input("Input the filter name in lowercase or uppercase(g, grayscale, s, or sierra: ")
+    filterName = input("Input the filter name in lowercase or uppercase(g, grayscale, s, or sierra): ")
 
-    #create a list of possible filter
+    #create a list of possible filters
     filterList = ["g","grayscale","s","sierra"]
 
     #if the user did not inputted the right filter, print an error message
